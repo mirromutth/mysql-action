@@ -1,0 +1,26 @@
+name: 'Setup MySQL'
+description: 'Setup a MySQL database'
+author: 'Mirro Mutth'
+branding:
+  icon: 'database'
+  color: 'orange'
+inputs:
+  # See https://hub.docker.com/_/mysql for supported versions and further details on input environment variables
+  mysql version:
+    description: 'Version of MySQL to use'
+    required: false
+    default: 'latest'
+  mysql database:
+    description: 'MYSQL_DATABASE - name for the default database that is created'
+    required: false
+    default: 'test'
+  mysql user:
+    description: 'MYSQL_USER - create the specified user with superuser power for created database'
+    required: false
+    default: 'test'
+  mysql password:
+    description: 'MYSQL_PASSWORD - superuser password'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
