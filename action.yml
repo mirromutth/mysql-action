@@ -5,22 +5,42 @@ branding:
   icon: 'database'
   color: 'orange'
 inputs:
-  # See https://hub.docker.com/_/mysql for supported versions and further details on input environment variables
+  host port:
+    description: 'The port of host'
+    required: false
+    default: 3306
+  container port:
+    description: 'The port of container'
+    required: false
+    default: 3306
+  character set server:
+    description: '--character-set-server - The character set of MySQL server'
+    required: false
+    default: 'utf8mb4'
+  collation server:
+    description: '--collation-server - The character collation of MySQL server'
+    required: false
+    default: 'utf8mb4_general_ci'
   mysql version:
     description: 'Version of MySQL to use'
     required: false
     default: 'latest'
+  mysql root password:
+    description: 'MYSQL_ROOT_PASSWORD - root superuser password'
+    required: false
+    default: ''
   mysql database:
     description: 'MYSQL_DATABASE - name for the default database that is created'
     required: false
-    default: 'test'
+    default: ''
   mysql user:
     description: 'MYSQL_USER - create the specified user with superuser power for created database'
     required: false
-    default: 'test'
+    default: ''
   mysql password:
-    description: 'MYSQL_PASSWORD - superuser password'
-    required: true
+    description: 'MYSQL_PASSWORD - specified superuser password which user is power for created database'
+    required: false
+    default: ''
 runs:
   using: 'docker'
   image: 'Dockerfile'
