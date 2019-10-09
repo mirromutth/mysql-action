@@ -15,7 +15,7 @@ steps:
     mysql version: '8.0' # Optional, default value is "latest". The version of the MySQL
     mysql database: 'some_test' # Optional, default value is "test". The specified database which will be create
     mysql root password: ${{ secrets.RootPassword }} # Required if "mysql user" is empty, default is empty. The root superuser password
-    mysql user: 'developer' # Required if "mysql root password" is empty, default is empty. The superuser for the specified database. Of course you can use secrets, too
+    mysql user: 'developer' # Required if "mysql root password" is empty, default is empty. The superuser for the specified database. Can use secrets, too
     mysql password: ${{ secrets.DatabasePassword }} # Required if "mysql user" exists. The password for the "mysql user"
 ```
 
