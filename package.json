@@ -1,0 +1,48 @@
+{
+  "name": "mysql-action",
+  "version": "1.1.1",
+  "description": "MySQL Github Action",
+  "main": "build/app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "lint": "eslint . --ext .ts",
+    "build": "node_modules/.bin/tsc",
+    "test": "mocha -r ts-node/register test/**/*-test.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mirromutth/mysql-action.git"
+  },
+  "keywords": [
+    "MySQL",
+    "Action",
+    "Github-Actions"
+  ],
+  "author": "Mirro Mutth",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mirromutth/mysql-action/issues"
+  },
+  "homepage": "https://github.com/mirromutth/mysql-action#readme",
+  "devDependencies": {
+    "@types/chai": "^4.2.3",
+    "@types/lodash": "^4.14.142",
+    "@types/mocha": "^5.2.7",
+    "@types/mysql": "^2.15.7",
+    "@typescript-eslint/eslint-plugin": "^2.3.3",
+    "@typescript-eslint/parser": "^2.3.3",
+    "chai": "^4.2.0",
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "mocha": "^6.2.1",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.6.3"
+  },
+  "dependencies": {
+    "lodash": "^4.17.15",
+    "mysql": "^2.17.1"
+  }
+}

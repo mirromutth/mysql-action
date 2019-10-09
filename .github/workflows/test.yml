@@ -1,0 +1,37 @@
+name: test
+
+on:
+  push:
+    branches:
+    - master
+  pull_request:
+    branches:
+    - master
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+
+    strategy:
+      matrix:
+        node-version: ['10.x']
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Set up MySQL Latest
+      uses: mirromutth/mysql-action@master
+      with:
+        mysql version: latest
+        mysql database: test
+        mysql root password: ${{ secrets.DatabasePassword }}
+    - name: npm install, build, and test
+      run: |
+        npm install
+        npm run lint
+        npm test -- --password=${{ secrets.DatabasePassword }}
+      env:
+        CI: true
