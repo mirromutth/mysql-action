@@ -18,6 +18,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+    - name: Shutdown Ubuntu MySQL (SUDO)
+      run: sudo service mysql stop
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
