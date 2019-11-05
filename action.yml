@@ -13,6 +13,10 @@ inputs:
     description: 'The port of container'
     required: false
     default: 3306
+  container name:
+    description: 'The name of container'
+    required: false
+    default: 'some_mysql'
   character set server:
     description: '--character-set-server - The character set of MySQL server'
     required: false

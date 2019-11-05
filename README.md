@@ -14,6 +14,7 @@ steps:
   with:
     host port: 3800 # Optional, default value is 3306. The port of host
     container port: 3307 # Optional, default value is 3306. The port of container
+    container name: 'some_test_mysql' # Optional, default value is 'some_mysql'. The name of container
     character set server: 'utf8' # Optional, default value is 'utf8mb4'. The '--character-set-server' option for mysqld
     collation server: 'utf8_general_ci' # Optional, default value is 'utf8mb4_general_ci'. The '--collation-server' option for mysqld
     mysql version: '8.0' # Optional, default value is "latest". The version of the MySQL
