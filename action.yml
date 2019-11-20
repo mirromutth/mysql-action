@@ -41,6 +41,14 @@ inputs:
     description: 'MYSQL_PASSWORD - specified superuser password which user is power for created database'
     required: false
     default: ''
+  use tmpfs:
+    description: "Whether or not to use Docker's tmpfs feature for MySQL's storage"
+    required: false
+    default: false
+  tmpfs size:
+    description: "Desired size of tmpfs volume"
+    required: false
+    default: "1024M"
 runs:
   using: 'docker'
   image: 'Dockerfile'

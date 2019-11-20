@@ -2,6 +2,10 @@
 
 docker_run="docker run"
 
+if [ "$INPUT_USE_TMPFS" == "true" ]; then
+  docker_run="$docker_run --tmpfs /var/lib/mysql:rw,noexec,nosuid,size=$INPUT_TMPFS_SIZE"
+fi
+
 if [ -n "$INPUT_MYSQL_ROOT_PASSWORD" ]; then
   echo "Root password not empty, use root superuser"
 
