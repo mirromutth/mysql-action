@@ -21,6 +21,8 @@ steps:
     mysql root password: ${{ secrets.RootPassword }} # Required if "mysql user" is empty, default is empty. The root superuser password
     mysql user: 'developer' # Required if "mysql root password" is empty, default is empty. The superuser for the specified database. Can use secrets, too
     mysql password: ${{ secrets.DatabasePassword }} # Required if "mysql user" exists. The password for the "mysql user"
+    use tmpfs: true # Optional, default value is false. Mounts /var/lib/mysql to tmpfs (i.e. in RAM) for increased performance
+    tmpfs size: '2048M' # Optional, default value is '1024M'. Desired size of above-mentioned tmpfs volume
 ```
 
 If want bind MySQL host port to 3306, please see [The Default MySQL](#the-default-mysql).
