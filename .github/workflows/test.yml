@@ -15,6 +15,7 @@ jobs:
     strategy:
       matrix:
         node-version: ['10.x']
+        mysql-variant: ['mysql', 'mariadb']
 
     steps:
     - uses: actions/checkout@v1
@@ -27,6 +28,7 @@ jobs:
     - name: Set up MySQL 5.7
       uses: mirromutth/mysql-action@master
       with:
+        mysql variant: ${{ matrix.mysql-variant }}
         mysql version: 5.7
         mysql database: test
         mysql root password: ${{ secrets.DatabasePassword }}
