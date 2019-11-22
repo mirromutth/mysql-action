@@ -15,9 +15,10 @@ jobs:
     strategy:
       matrix:
         node-version: ['10.x']
-        mysql-variant: ['mysql', 'mariadb']
-        mysql-version: ['5.7']
         include:
+          - node-version: '10.x'
+            mysql-variant: 'mysql'
+            mysql-version: '5.7'
           - node-version: '10.x'
             mysql-variant: 'mysql'
             mysql-version: '8.0'
