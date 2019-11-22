@@ -34,7 +34,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: Set up ${{ matrix.mysql-variant }} ${{ matrix.mysql-version }}
-      uses: mirromutth/mysql-action@master
+      uses: ./
       with:
         mysql variant: ${{ matrix.mysql-variant }}
         mysql version: ${{ matrix.mysql-version }}
