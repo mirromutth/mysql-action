@@ -15,16 +15,15 @@ jobs:
     strategy:
       matrix:
         node-version: ['10.x']
-        include:
+        mysql-variant: ['mysql', 'mariadb']
+        mysql-version: ['5.7', '8.0', '10.3']
+        exclude:
           - node-version: '10.x'
             mysql-variant: 'mysql'
-            mysql-version: '5.7'
-          - node-version: '10.x'
-            mysql-variant: 'mysql'
-            mysql-version: '8.0'
+            mysql-version: '10.3'
           - node-version: '10.x'
             mysql-variant: 'mariadb'
-            mysql-version: '10.3'
+            mysql-version: '8.0'
 
     steps:
     - uses: actions/checkout@v1
