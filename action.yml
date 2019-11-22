@@ -22,7 +22,7 @@ inputs:
     required: false
     default: 'utf8mb4_general_ci'
   mysql variant:
-    description: 'Variant / fork of MySQL. Values: mysql, mariadb.'
+    description: 'Variant (fork) of MySQL. Values: mysql, mariadb.'
     required: false
     default: 'mysql'
   mysql version:
@@ -45,6 +45,10 @@ inputs:
     description: 'MYSQL_PASSWORD - specified superuser password which user is power for created database'
     required: false
     default: ''
+  authentication plugin:
+    description: 'Set authentication plugin. Login/password is used as default. Changes default behaviour of MySQL 8.0+, where `caching_sha2_password` is a default value.'
+    required: false
+    default: 'mysql_native_password'
 runs:
   using: 'docker'
   image: 'Dockerfile'

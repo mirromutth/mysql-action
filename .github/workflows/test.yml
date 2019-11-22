@@ -16,6 +16,14 @@ jobs:
       matrix:
         node-version: ['10.x']
         mysql-variant: ['mysql', 'mariadb']
+        mysql-version: ['5.7']
+        include:
+          - node-version: '10.x'
+            mysql-variant: 'mysql'
+            mysql-version: '8.0'
+          - node-version: '10.x'
+            mysql-variant: 'mariadb'
+            mysql-version: '10.3'
 
     steps:
     - uses: actions/checkout@v1
@@ -25,11 +33,11 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: Set up MySQL 5.7
+    - name: Set up ${{ matrix.mysql-variant }} ${{ matrix.mysql-version }}
       uses: mirromutth/mysql-action@master
       with:
         mysql variant: ${{ matrix.mysql-variant }}
-        mysql version: 5.7
+        mysql version: ${{ matrix.mysql-version }}
         mysql database: test
         mysql root password: ${{ secrets.DatabasePassword }}
     - name: npm install, build, and test

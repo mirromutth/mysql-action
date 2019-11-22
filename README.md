@@ -22,6 +22,7 @@ steps:
     mysql root password: ${{ secrets.RootPassword }} # Required if "mysql user" is empty, default is empty. The root superuser password
     mysql user: 'developer' # Required if "mysql root password" is empty, default is empty. The superuser for the specified database. Can use secrets, too
     mysql password: ${{ secrets.DatabasePassword }} # Required if "mysql user" exists. The password for the "mysql user"
+    authentication plugin: 'mysql_old_password' # Optional, default value is "mysql_native_password". This was the standard plugin in MySQL before 8.0 version.  
 ```
 
 If want bind MySQL host port to 3306, please see [The Default MySQL](#the-default-mysql).
