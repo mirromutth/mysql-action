@@ -23,7 +23,7 @@ steps:
     mysql password: ${{ secrets.DatabasePassword }} # Required if "mysql user" exists. The password for the "mysql user"
 ```
 
-If want bind MySQL host port to 3306, please see [The Default MySQL](#the-default-mysql).
+If you want to bind the MySQL host port to 3306, please see [The Default MySQL](#the-default-mysql).
 
 See [Docker Hub](https://hub.docker.com/_/mysql) for available MySQL versions.
 
