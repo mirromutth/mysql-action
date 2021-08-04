@@ -58,6 +58,12 @@ jobs:
       with:
         # ... Set-up MySQL configuration, see Usage
 
+    - name: Wait for MySQL
+      run: |
+        while ! mysqladmin ping --host=127.0.0.1 --password=$MYSQL_ROOT_PASSWORD --silent; do
+          sleep 1
+        done
+
     - # ... some steps after set-up MySQL ...
 
     # ... some another config ...
