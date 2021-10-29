@@ -41,6 +41,10 @@ inputs:
     description: 'MYSQL_PASSWORD - specified superuser password which user is power for created database'
     required: false
     default: ''
+  sql mode:
+    description: '--sql-mode - The sql-mode of MySQL server'
+    required: false
+    default: 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION'
 runs:
   using: 'docker'
   image: 'Dockerfile'

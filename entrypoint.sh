@@ -28,5 +28,6 @@ fi
 
 docker_run="$docker_run -d -p $INPUT_HOST_PORT:$INPUT_CONTAINER_PORT mysql:$INPUT_MYSQL_VERSION --port=$INPUT_CONTAINER_PORT"
 docker_run="$docker_run --character-set-server=$INPUT_CHARACTER_SET_SERVER --collation-server=$INPUT_COLLATION_SERVER"
+docker-run="$docker_run --sql-mode=$INPUT_SQL_MODE"
 
 sh -c "$docker_run"
